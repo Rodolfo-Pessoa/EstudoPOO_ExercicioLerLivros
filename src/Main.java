@@ -1,15 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Pessoa.Pessoa;
+import Pessoa.Livros;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Pessoa[] p = new Pessoa[2];
+        Livros[] l = new Livros[3];
+
+        p[0] = new Pessoa("Maria", 30, "feminino");
+        p[1] = new Pessoa("João", 29, "Masculino");
+
+
+        l[0] = new Livros("POO java iniciante","Guanaraba", 400, p[0]);
+        l[1] = new Livros("POO java intermédio", "N.Alves", 500, p[1]);
+        l[2] = new Livros("POO java avançado", "AlgaWorks", 600, p[0]);
+
+        l[0].abrir();
+        l[0].folhear(200);
+        System.out.println(l[0].detalhes());
     }
 }
